@@ -105,16 +105,29 @@ const passwordStrengthDisplay = function showPasswordStrength(data){
 }
 
 
+const checkPasswords = function checkIfPasswordsEqual (passwordv2, password) {
+  const errorMsgId = 'password-mismatch-error';
 
-const checkPasswords = function checkIfPasswordsEqual () {
+  // Check if the error message element already exists
+  const existingErrorMsg = document.getElementById(errorMsgId);
 
+  if (passwordv2 === password) {
+    // If passwords match and the error message exists, remove it
+    if (existingErrorMsg) {
+      existingErrorMsg.remove();
+    }
+  } else {
+    // If passwords do not match and the error message does not exist, create and add it
+    if (!existingErrorMsg) {
+      let errorMsg = document.createElement('div');
+      errorMsg.id = errorMsgId; // Set the id to the new element
+      errorMsg.classList.add('password__check-errors-message');
+      errorMsg.innerText = `Passwords are not the same`;
+
+      passwordMessagesContainer.insertAdjacentElement('afterbegin', errorMsg);
+    }
+  }
 }
-
-
-
-
-
-
 
 // Events
 signInBtn.addEventListener('click', ()=> {
@@ -155,4 +168,9 @@ signUpPassword.addEventListener('input', () => {
   }
   passwordStrength(signUpPassword);
 
+})
+
+signUpPasswordRepeat.addEventListener('input', () => {
+  let signUpValue = signUpPassword.value;
+  checkPasswords(signUpPasswordRepeat.value, signUpValue);
 })
