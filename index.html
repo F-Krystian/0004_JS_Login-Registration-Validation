@@ -19,17 +19,26 @@
             person
           </span>
           Sign In</div>
-        <div class="form__label form__label-sign-ip">
+        <div class="form__label form__label-sign-up">
           <span class="material-symbols-outlined">
             person_add
           </span>
           Sign Up</div>
       </div>
      <!-- Sign in -->         
-      <div class="form__content form__sign-in">    
+      <div class="form__content form__sign-in active">    
         <div class="form__content-inputs">
-          <input type="text" name="sign-in-login" id="sign-in-login" class="sign-in__input sign-in-login" placeholder="Username">
-          <input type="password" name="sign-in-password" id="sign-in-password" class="sign-in__input sign-in-password" placeholder="Password">        
+          <div class="form__input-box">
+            <input type="text" name="sign-in-login" id="sign-in-login" class="sign-in__input sign-in-login" placeholder="Username" required>
+            <span class="material-symbols-outlined form__input-box-ico">
+              account_circle
+              </span>   
+          </div>
+          <div class="form__input-box">
+            <input type="password" name="sign-in-password" id="sign-in-password" class="sign-in__input sign-in-password" placeholder="Password" required>         
+            <span class="material-symbols-outlined form__input-box-ico form__input-box-ico-lock">lock</span>   
+            <span class="material-symbols-outlined form__input-box-ico-visibility">visibility</span> 
+          </div>
         </div>
         <div class="form__forgotten-password"><a href="#">Forgot Password?</a></div>
         <div class="form__rememeber">
@@ -46,10 +55,41 @@
     <!-- Sign up   -->
     <div class="form__content form__sign-up active">
       <div class="form__content-inputs">
-        <input type="email" name="sign-up__input-email" id="sign-up__input-email" class="sign-in__input sign-up__input-email" placeholder="Email"> 
-        <input type="text" name="sign-up__input-email" id="sign-up__input-username" class="sign-in__input sign-up__input-username" placeholder="Username">  
-        <input type="password" name="sign-up__input-password" id="sign-up__input-password" class="sign-in__input sign-up__input-pasword" placeholder="Password"> 
-        <input type="password" name="sign-up__input-password" id="sign-up__input-password-2" class="sign-in__input sign-up__input-pasword-2" placeholder="Confirm Password"> 
+        <!-- Email -->
+        <div class="form__input-box">
+          <input type="email" name="sign-up__input-email" id="sign-up__input-email" class="sign-in__input sign-up__input-email" placeholder="Email" required> 
+          <span class="material-symbols-outlined form__input-box-ico">
+            mail
+          </span>
+        </div>
+        <!-- Username -->
+        <div class="form__input-box">
+          <input type="text" name="sign-up__input-email" id="sign-up__input-username" class="sign-in__input sign-up__input-username" placeholder="Username" required>  
+          <span class="material-symbols-outlined form__input-box-ico">
+            account_circle
+          </span> 
+        </div>
+        <!-- Password -->
+        <div class="form__input-box">
+          <input type="password" name="sign-up__input-password" id="sign-up__input-password" class="sign-in__input sign-up__input-pasword" placeholder="Password" required> 
+          <span class="material-symbols-outlined form__input-box-ico">
+            lock
+          </span>  
+        </div>
+        <!-- Password strength -->
+        <div class="form__input-box password__strength-container">
+          <!-- <div class="password__strength-box"></div> -->
+        </div>
+        <!-- Password v2 -->
+        <div class="form__input-box">
+          <input type="password" name="sign-up__input-password" id="sign-up__input-password-2" class="sign-in__input sign-up__input-pasword-2" placeholder="Confirm Password" required> 
+          <span class="material-symbols-outlined form__input-box-ico">
+            lock
+          </span>  
+        </div>
+        <div id="password__check-errors"  class="password__check-errors">
+          <!-- <p class="password__check-errors-message">Passwords are not the same</p> -->
+        </div>
       </div>
       <div class="form__btn-sign-in">
         <button class="form-btn form-btn_sign-up">

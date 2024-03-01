@@ -65,12 +65,15 @@ main{
   cursor:pointer;
 }
 
-.form__label.active{
+.form__label-sign-in.active{
   background-color: hsl(240, 50%, 50%);
   color: hsl(0, 50%, 100%);
 }
 
-
+.form__label-sign-up.active{
+  background-color: hsl(240, 50%, 50%);
+  color: hsl(0, 50%, 100%);
+}
 
 /* Forms content */
 
@@ -88,20 +91,46 @@ main{
   gap: 1.5rem;
 }
 
+.form__input-box{
+  width: 100%;
+  position: relative;
+}
+
 .sign-in__input{
   width: 100%;
-  height: 3.5rem;
+  height: 4rem;
   border-radius: 1rem;
   border: none;
   box-shadow: 0 0 5px hsla(240, 50%, 0%, .2);
-  padding-left: 1rem;
+  padding-left: 4rem;
 }
 
 .sign-in__input::placeholder{
   opacity: .6;
 }
 
+.form__input-box-ico{
+  font-size: 2rem;
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  transform: translateY(50%);
+  opacity: .6;
+}
 
+.form__input-box-ico-visibility{
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  top: 0;
+  transform: translateY(50%);
+  opacity: .6;
+}
+
+.form__input-box-ico-visibility:hover{
+  cursor: pointer;
+  font-weight: 600;
+}
 
 .form__forgotten-password{
   color: hsl(240, 50%, 50%);
@@ -148,4 +177,36 @@ main{
 
 .form__sign-up{
   display: none;
+}
+
+.form__sign-in.active{
+  display: flex;
+}
+
+.form__sign-in{
+  display: none;
+}
+
+/* Password strength */
+.password__strength-container.active{
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: .5rem;
+}
+
+.password__strength-container{
+  display: none;
+}
+
+.password__strength-box{
+  width: 20%;
+  height: 100%;
+  background-color: hsl(240, 50%, 50%);
+  border-radius: 1rem;; 
+}
+
+.password__check-errors-message{
+  color: hsl(0, 50%, 40%);
 }
